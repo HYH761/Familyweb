@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 家庭交互平台（Family Interaction Platform）
 
-## Getting Started
+## 项目简介
 
-First, run the development server:
+本项目是一个面向家庭成员的知识库与互动平台，支持知识分享、互动学习、内容分类、小游戏等功能，旨在提升家庭成员间的交流与共同成长。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 主要功能
+- 家庭知识库（支持多维度分类：旅游、美食、认知、健康等）
+- 文章、视频、图片、链接等内容发布与管理
+- 互动功能：点赞、评论、收藏、分享
+- 用户注册、登录
+- 响应式设计，适配多终端
+- 后续可扩展教育小游戏、学习计划、错题本等
+
+## 技术栈
+- 前端框架：Next.js 15 + TypeScript
+- 样式：Tailwind CSS
+- 组件库：Headless UI、Heroicons（可选）
+- 状态管理：React 内置（可扩展 Redux、Zustand 等）
+- 认证与后端：可扩展 NextAuth、MongoDB、Prisma 等
+
+## 目录结构
+```
+family-platform/
+├── src/
+│   ├── app/           # 页面与路由
+│   ├── components/    # 复用组件
+│   ├── types/         # 类型定义
+│   ├── lib/           # 工具库
+│   ├── models/        # 数据模型
+│   ├── styles/        # 全局样式
+│   └── utils/         # 工具函数
+├── public/            # 静态资源
+├── package.json       # 项目依赖
+├── tsconfig.json      # TypeScript 配置
+├── next.config.ts     # Next.js 配置
+└── README.md          # 项目说明
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 本地开发
+1. 安装依赖：
+   ```bash
+   npm install
+   ```
+2. 启动开发服务器：
+   ```bash
+   npm run dev
+   ```
+3. 访问：
+   [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 部署说明
+- 推荐使用 [Vercel](https://vercel.com/) 一键部署。
+- 也可部署到 Netlify、阿里云、腾讯云等平台。
+- 如需后端数据库支持，请补充相关环境变量和 API 路由。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 贡献与扩展
+- 欢迎家庭成员共同参与开发与内容建设。
+- 可扩展更多互动功能、教育小游戏、学习数据分析等。
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+如有问题或建议，欢迎联系项目维护者。
+# Familyweb
