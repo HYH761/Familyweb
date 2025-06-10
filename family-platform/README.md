@@ -14,10 +14,17 @@
 
 ## 技术栈
 - 前端框架：Next.js 15 + TypeScript
-- 样式：Tailwind CSS
-- 组件库：Headless UI、Heroicons（可选）
-- 状态管理：React 内置（可扩展 Redux、Zustand 等）
-- 认证与后端：可扩展 NextAuth、MongoDB、Prisma 等
+- 样式：Tailwind CSS v4
+- 组件库：Headless UI、Heroicons
+- 后端服务：Supabase (认证 + 数据库 + API)
+- 部署平台：Vercel
+- 数据库：PostgreSQL (Supabase)
+
+## 📚 项目文档
+- **项目规则与开发指南：** [`docs/PROJECT_RULES.md`](./docs/PROJECT_RULES.md)
+- **开发快速指南：** [`docs/DEVELOPMENT_GUIDE.md`](./docs/DEVELOPMENT_GUIDE.md)
+- **API 文档：** `docs/API.md` (待创建)
+- **部署文档：** `docs/DEPLOYMENT.md` (待创建)
 
 ## 目录结构
 ```
