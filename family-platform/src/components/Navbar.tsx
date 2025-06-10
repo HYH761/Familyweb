@@ -31,9 +31,9 @@ export default function Navbar() {
             <Image
               src="/logo.webp"
               alt="Family Web Platform Logo"
-              width={64}
-              height={64}
-              className="w-16 h-16 object-contain"
+              width={0}
+              height={40}
+              className="h-10 w-auto object-contain"
               priority
             />
             <span className="text-xl font-bold text-neutral-800 hidden sm:block">
@@ -51,7 +51,7 @@ export default function Navbar() {
               >
                 {item.icon && <item.icon className="h-4 w-4" />}
                 <span>{item.label}</span>
-              </Link>
+            </Link>
             ))}
           </div>
 
