@@ -1,0 +1,1 @@
+{"buildCommand": "cd family-platform && npm run build", "outputDirectory": "family-platform/.next", "framework": "nextjs", "installCommand": "cd family-platform && npm install"}
