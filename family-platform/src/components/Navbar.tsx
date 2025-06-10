@@ -31,13 +31,13 @@ export default function Navbar() {
             <Image
               src="/logo.webp"
               alt="Family Web Platform Logo"
-              width={40}
-              height={40}
-              className="w-10 h-10 object-contain"
+              width={48}
+              height={48}
+              className="w-12 h-12 object-contain"
               priority
             />
             <span className="text-xl font-bold text-neutral-800 hidden sm:block">
-              家庭交互平台
+              Family Web
             </span>
           </Link>
 

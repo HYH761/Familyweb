@@ -41,11 +41,11 @@ export default function Footer() {
               <Image
                 src="/logo.webp"
                 alt="Family Web Platform Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10 object-contain"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-contain"
               />
-              <span className="text-xl font-bold">家庭交互平台</span>
+              <span className="text-xl font-bold">Family Web</span>
             </Link>
             <p className="text-neutral-400 text-sm leading-relaxed mb-6">
               为现代家庭打造的数字化互动平台，让每个家庭都能享受科技带来的便利与温暖。
@@ -54,15 +54,15 @@ export default function Footer() {
             {/* 联系信息 */}
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-neutral-400">
-                <EnvelopeIcon className="h-4 w-4" />
+                <EnvelopeIcon className="h-3.5 w-3.5 flex-shrink-0" />
                 <span>contact@familyweb.com</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-neutral-400">
-                <PhoneIcon className="h-4 w-4" />
+                <PhoneIcon className="h-3.5 w-3.5 flex-shrink-0" />
                 <span>400-123-4567</span>
               </div>
               <div className="flex items-start space-x-2 text-sm text-neutral-400">
-                <MapPinIcon className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                <MapPinIcon className="h-3.5 w-3.5 mt-0.5 flex-shrink-0" />
                 <span>北京市朝阳区科技园区创新大厦</span>
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center">
             {/* 版权信息 */}
             <div className="flex items-center space-x-1 text-sm text-neutral-400">
-              <span>© 2025 家庭交互平台. 保留所有权利. Made with</span>
+              <span>© 2025 Family Web. 保留所有权利. Made with</span>
               <HeartIcon className="h-4 w-4 text-red-500" />
               <span>in Beijing</span>
             </div>

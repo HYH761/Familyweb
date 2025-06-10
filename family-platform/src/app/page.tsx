@@ -67,7 +67,7 @@ export default function Home() {
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
               欢迎来到
-              <span className="block text-orange-500 mt-2">家庭交互平台</span>
+              <span className="block text-orange-500 mt-2">Family Web</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-neutral-600">
               记录家庭美好时光，分享生活点滴智慧。让每个家庭成员都能参与其中，共同创造温馨的数字家园。
