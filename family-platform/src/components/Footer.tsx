@@ -36,11 +36,12 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-3 mb-4">
               <Image
-                src="/logo.webp"
+                src="/images/logo-hq.png"
                 alt="Family Web Platform Logo"
-                width={48}
-                height={48}
-                className="w-12 h-12 object-contain"
+                width={120}
+                height={30}
+                className="h-8 w-auto object-contain"
+                unoptimized
               />
               <span className="text-xl font-bold">Family Web</span>
             </Link>

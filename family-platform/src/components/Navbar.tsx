@@ -29,12 +29,13 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <Image
-              src="/logo.webp"
+              src="/images/logo-hq.png"
               alt="Family Web Platform Logo"
-              width={0}
+              width={176}
               height={40}
               className="h-10 w-auto object-contain"
               priority
+              unoptimized
             />
             <span className="text-xl font-bold text-neutral-800 hidden sm:block">
               Family Web
