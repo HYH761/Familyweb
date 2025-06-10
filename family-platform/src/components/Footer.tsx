@@ -54,15 +54,15 @@ export default function Footer() {
             {/* 联系信息 */}
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-neutral-400">
-                <EnvelopeIcon className="h-3.5 w-3.5 flex-shrink-0" />
+                <EnvelopeIcon className="h-4 w-4 flex-shrink-0" />
                 <span>contact@familyweb.com</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-neutral-400">
-                <PhoneIcon className="h-3.5 w-3.5 flex-shrink-0" />
+                <PhoneIcon className="h-4 w-4 flex-shrink-0" />
                 <span>400-123-4567</span>
               </div>
               <div className="flex items-start space-x-2 text-sm text-neutral-400">
-                <MapPinIcon className="h-3.5 w-3.5 mt-0.5 flex-shrink-0" />
+                <MapPinIcon className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <span>北京市朝阳区科技园区创新大厦</span>
               </div>
             </div>
