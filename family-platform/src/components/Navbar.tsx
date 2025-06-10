@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon, HomeIcon, SparklesIcon } from '@heroicons/react/24/outline'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -12,8 +12,18 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const navigationItems = [
+    { href: '/', label: '首页', icon: HomeIcon },
+    { href: '/features', label: '功能特色', icon: SparklesIcon },
+    { href: '/about', label: '关于我们' },
+    { href: '/travel', label: '旅游记录' },
+    { href: '/food', label: '美食分享' },
+    { href: '/knowledge', label: '知识学习' },
+    { href: '/health', label: '健康管理' }
+  ]
+
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-lg border-b border-neutral-200">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -26,44 +36,45 @@ export default function Navbar() {
               className="w-10 h-10 object-contain"
               priority
             />
-            <span className="text-xl font-bold text-gray-800 hidden sm:block">
+            <span className="text-xl font-bold text-neutral-800 hidden sm:block">
               家庭交互平台
             </span>
           </Link>
 
           {/* 桌面端导航链接 */}
-          <div className="hidden md:flex space-x-8">
-            <Link href="/travel" className="text-gray-600 hover:text-orange-500 transition-colors">
-              旅游
-            </Link>
-            <Link href="/food" className="text-gray-600 hover:text-orange-500 transition-colors">
-              美食
-            </Link>
-            <Link href="/knowledge" className="text-gray-600 hover:text-orange-500 transition-colors">
-              认知
-            </Link>
-            <Link href="/health" className="text-gray-600 hover:text-orange-500 transition-colors">
-              健康
-            </Link>
+          <div className="hidden lg:flex items-center space-x-1">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex items-center space-x-1 px-3 py-2 text-neutral-600 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-all duration-200"
+              >
+                {item.icon && <item.icon className="h-4 w-4" />}
+                <span>{item.label}</span>
+              </Link>
+            ))}
           </div>
 
           {/* 桌面端用户操作 */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link href="/login" className="text-gray-600 hover:text-orange-500 transition-colors">
+          <div className="hidden lg:flex items-center space-x-3">
+            <Link 
+              href="/login" 
+              className="px-4 py-2 text-neutral-600 hover:text-orange-500 transition-colors font-medium"
+            >
               登录
             </Link>
             <Link
               href="/register"
-              className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition-colors"
+              className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-5 py-2 rounded-lg hover:from-orange-600 hover:to-pink-600 transition-all duration-200 font-medium shadow-sm"
             >
-              注册
+              免费注册
             </Link>
           </div>
 
           {/* 移动端菜单按钮 */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-md text-gray-600 hover:text-orange-500 hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-neutral-600 hover:text-orange-500 hover:bg-neutral-100 transition-colors"
             aria-label="打开菜单"
           >
             {isMenuOpen ? (
@@ -76,50 +87,35 @@ export default function Navbar() {
 
         {/* 移动端菜单 */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200">
+          <div className="lg:hidden border-t border-neutral-200 bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link
-                href="/travel"
-                className="block px-3 py-2 text-gray-600 hover:text-orange-500 hover:bg-gray-50 rounded-md transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                旅游
-              </Link>
-              <Link
-                href="/food"
-                className="block px-3 py-2 text-gray-600 hover:text-orange-500 hover:bg-gray-50 rounded-md transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                美食
-              </Link>
-              <Link
-                href="/knowledge"
-                className="block px-3 py-2 text-gray-600 hover:text-orange-500 hover:bg-gray-50 rounded-md transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                认知
-              </Link>
-              <Link
-                href="/health"
-                className="block px-3 py-2 text-gray-600 hover:text-orange-500 hover:bg-gray-50 rounded-md transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                健康
-              </Link>
-              <hr className="my-2 border-gray-200" />
+              {navigationItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center space-x-2 px-3 py-3 text-neutral-600 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.icon && <item.icon className="h-5 w-5" />}
+                  <span>{item.label}</span>
+                </Link>
+              ))}
+              
+              <hr className="my-3 border-neutral-200" />
+              
               <Link
                 href="/login"
-                className="block px-3 py-2 text-gray-600 hover:text-orange-500 hover:bg-gray-50 rounded-md transition-colors"
+                className="block px-3 py-3 text-neutral-600 hover:text-orange-500 hover:bg-neutral-50 rounded-lg transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 登录
               </Link>
               <Link
                 href="/register"
-                className="block px-3 py-2 bg-orange-500 text-white hover:bg-orange-600 rounded-md transition-colors text-center"
+                className="block px-3 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white hover:from-orange-600 hover:to-pink-600 rounded-lg transition-all duration-200 text-center font-medium shadow-sm"
                 onClick={() => setIsMenuOpen(false)}
               >
-                注册
+                免费注册
               </Link>
             </div>
           </div>
