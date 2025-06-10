@@ -2,9 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { 
-  MapPinIcon, 
-  EnvelopeIcon, 
-  PhoneIcon,
   HeartIcon
 } from '@heroicons/react/24/outline'
 
@@ -50,22 +47,6 @@ export default function Footer() {
             <p className="text-neutral-400 text-sm leading-relaxed mb-6">
               为现代家庭打造的数字化互动平台，让每个家庭都能享受科技带来的便利与温暖。
             </p>
-            
-            {/* 联系信息 */}
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-sm text-neutral-400">
-                <EnvelopeIcon className="h-4 w-4 flex-shrink-0" />
-                <span>contact@familyweb.com</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-neutral-400">
-                <PhoneIcon className="h-4 w-4 flex-shrink-0" />
-                <span>400-123-4567</span>
-              </div>
-              <div className="flex items-start space-x-2 text-sm text-neutral-400">
-                <MapPinIcon className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>北京市朝阳区科技园区创新大厦</span>
-              </div>
-            </div>
           </div>
 
           {/* 平台链接 */}
