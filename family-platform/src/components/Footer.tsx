@@ -43,9 +43,9 @@ export default function Footer() {
           </div>
 
           {/* 导航链接区域 - 水平排列 */}
-          <div className="flex flex-row flex-wrap">
+          <div className="flex flex-row justify-between">
             {/* 平台导航 */}
-            <div className="w-1/3 mb-8">
+            <div className="w-1/3 mb-8 text-center">
               <h3 className="text-lg font-semibold mb-4">平台导航</h3>
               <ul className="space-y-2">
                 {footerLinks.platform.map((link) => (
@@ -62,7 +62,7 @@ export default function Footer() {
             </div>
 
             {/* 功能模块 */}
-            <div className="w-1/3 mb-8">
+            <div className="w-1/3 mb-8 text-center">
               <h3 className="text-lg font-semibold mb-4">功能模块</h3>
               <ul className="space-y-2">
                 {footerLinks.features.map((link) => (
@@ -79,7 +79,7 @@ export default function Footer() {
             </div>
 
             {/* 支持与帮助 */}
-            <div className="w-1/3 mb-8">
+            <div className="w-1/3 mb-8 text-center">
               <h3 className="text-lg font-semibold mb-4">支持与帮助</h3>
               <ul className="space-y-2">
                 {footerLinks.support.map((link) => (

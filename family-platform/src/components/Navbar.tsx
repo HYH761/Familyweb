@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className="container mx-auto">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity ml-[15px]">
+          <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity ml-[15px] mt-[15px]">
             <Image
               src="/images/logo-hq.png"
               alt="Family Web Platform Logo"
@@ -48,7 +48,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex items-center space-x-1 px-3 py-2 text-neutral-600 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-all duration-200"
+                className="flex items-center space-x-1 px-3 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-all duration-200"
               >
                 {item.icon && <item.icon className="h-4 w-4" />}
                 <span>{item.label}</span>
@@ -60,13 +60,13 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-3 mr-[15px]">
             <Link 
               href="/login" 
-              className="px-4 py-2 text-neutral-600 hover:text-orange-500 transition-colors font-medium"
+              className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors font-medium"
             >
               登录
             </Link>
             <Link
               href="/register"
-              className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-5 py-2 rounded-lg hover:from-orange-600 hover:to-pink-600 transition-all duration-200 font-medium shadow-sm"
+              className="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition-all duration-200 font-medium shadow-sm"
             >
               免费注册
             </Link>
@@ -75,7 +75,7 @@ export default function Navbar() {
           {/* 移动端菜单按钮 */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-2 rounded-lg text-neutral-600 hover:text-orange-500 hover:bg-neutral-100 transition-colors mr-[15px]"
+            className="lg:hidden p-2 rounded-lg text-gray-600 hover:text-gray-800 hover:bg-gray-100 transition-colors mr-[15px]"
             aria-label="打开菜单"
           >
             {isMenuOpen ? (
@@ -94,7 +94,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center space-x-2 px-3 py-3 text-neutral-600 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors"
+                  className="flex items-center space-x-2 px-3 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.icon && <item.icon className="h-5 w-5" />}
@@ -104,14 +104,14 @@ export default function Navbar() {
               
               <Link
                 href="/login"
-                className="block px-3 py-3 text-neutral-600 hover:text-orange-500 hover:bg-neutral-50 rounded-lg transition-colors font-medium"
+                className="block px-3 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 登录
               </Link>
               <Link
                 href="/register"
-                className="block px-3 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white hover:from-orange-600 hover:to-pink-600 rounded-lg transition-all duration-200 text-center font-medium shadow-sm"
+                className="block px-3 py-3 bg-gray-800 text-white hover:bg-gray-900 rounded-lg transition-all duration-200 text-center font-medium shadow-sm"
                 onClick={() => setIsMenuOpen(false)}
               >
                 免费注册

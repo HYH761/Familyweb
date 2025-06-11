@@ -24,11 +24,11 @@ export function Button({
   const baseStyles = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
   
   const variants = {
-    primary: 'bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-sm',
-    secondary: 'bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-500 shadow-sm',
-    outline: 'border border-neutral-300 text-neutral-700 hover:bg-neutral-50 focus:ring-neutral-500',
-    ghost: 'text-neutral-600 hover:bg-neutral-100 focus:ring-neutral-500',
-    destructive: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500 shadow-sm'
+    primary: 'bg-gray-800 text-white hover:bg-gray-900 focus:ring-gray-800 shadow-sm',
+    secondary: 'bg-gray-800 text-white hover:bg-gray-900 focus:ring-gray-800 shadow-sm',
+    outline: 'border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-500',
+    ghost: 'text-gray-700 hover:bg-gray-100 focus:ring-gray-500',
+    destructive: 'bg-gray-800 text-white hover:bg-gray-900 focus:ring-gray-800 shadow-sm'
   }
   
   const sizes = {

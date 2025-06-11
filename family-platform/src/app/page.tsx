@@ -20,8 +20,8 @@ export default function Home() {
       title: '旅游记录',
       description: '记录家庭出行的美好时光，分享旅游攻略与景点推荐',
       icon: MapPinIcon,
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
+      color: 'text-gray-700',
+      bgColor: 'bg-gray-100',
       items: ['旅游攻略', '景点推荐', '旅行日记', '路线规划']
     },
     {
@@ -29,8 +29,8 @@ export default function Home() {
       title: '美食分享',
       description: '家庭烹饪技巧分享，记录每一道温暖的家常菜',
       icon: CameraIcon,
-      color: 'text-pink-600',
-      bgColor: 'bg-pink-50',
+      color: 'text-gray-700',
+      bgColor: 'bg-gray-100',
       items: ['食谱分享', '烹饪技巧', '美食探店', '营养搭配']
     },
     {
@@ -38,8 +38,8 @@ export default function Home() {
       title: '知识学习',
       description: '积累生活智慧，传承家庭文化与价值观',
       icon: BookOpenIcon,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
+      color: 'text-gray-700',
+      bgColor: 'bg-gray-100',
       items: ['生活常识', '科普知识', '历史文化', '技能学习']
     },
     {
@@ -47,8 +47,8 @@ export default function Home() {
       title: '健康生活',
       description: '关注身心健康，营造温馨和谐的家庭氛围',
       icon: HeartIcon,
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50',
+      color: 'text-gray-700',
+      bgColor: 'bg-gray-100',
       items: ['运动健身', '心理健康', '饮食健康', '作息管理']
     }
   ]
@@ -61,7 +61,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
       {/* 英雄区域 */}
       <section className="relative px-4 pt-16 pb-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -93,8 +93,8 @@ export default function Home() {
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="flex justify-center mb-2">
-                  <div className="p-2 bg-orange-100 rounded-lg">
-                    <stat.icon className="h-6 w-6 text-orange-600" />
+                  <div className="p-2 bg-gray-100 rounded-lg">
+                    <stat.icon className="h-6 w-6 text-gray-700" />
                   </div>
                 </div>
                 <div className="text-2xl font-bold text-neutral-900">{stat.value}</div>
@@ -140,7 +140,7 @@ export default function Home() {
                   {feature.items.map((item, index) => (
                     <div 
                       key={index}
-                      className="text-sm text-neutral-500 px-3 py-1 bg-neutral-50 rounded-full inline-block mr-1 mb-1"
+                      className="text-sm text-gray-600 px-3 py-1 bg-gray-100 rounded-full inline-block mr-1 mb-1"
                     >
                       {item}
                     </div>
@@ -159,19 +159,19 @@ export default function Home() {
       </section>
 
       {/* 行动号召区域 */}
-      <section className="bg-gradient-to-r from-orange-500 to-pink-500 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gray-800 py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             开始您的家庭数字化之旅
           </h2>
-          <p className="mt-4 text-lg text-orange-100">
+          <p className="mt-4 text-lg text-gray-300">
             加入我们，与家人一起创造和分享美好回忆
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               variant="secondary" 
               size="lg"
-              className="bg-white text-orange-600 hover:bg-orange-50"
+              className="bg-white text-gray-800 hover:bg-gray-100"
             >
               立即注册
             </Button>
