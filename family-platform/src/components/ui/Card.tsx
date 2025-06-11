@@ -19,7 +19,7 @@ export function Card({
   const baseStyles = 'rounded-xl transition-all duration-200'
   
   const variants = {
-    default: 'bg-white border border-neutral-200',
+    default: 'bg-white shadow-sm',
     outlined: 'bg-transparent border-2 border-neutral-300',
     elevated: 'bg-white shadow-lg border-0'
   }

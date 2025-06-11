@@ -67,15 +67,9 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <div className="flex flex-col items-center justify-center">
-              <Image
-                src="/images/logo-hq.png"
-                alt="Family Web Logo"
-                width={500}
-                height={100}
-                className="w-auto h-auto max-w-full mb-4"
-                priority
-                unoptimized
-              />
+              <h1 className="text-4xl sm:text-5xl font-bold text-neutral-900 mb-4">
+                Family Web
+              </h1>
             </div>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-neutral-600">
               记录家庭美好时光，分享生活点滴智慧。让每个家庭成员都能参与其中，共同创造温馨的数字家园。
@@ -84,7 +78,7 @@ export default function Home() {
               <Button size="lg" leftIcon={<UsersIcon className="h-5 w-5" />}>
                 开始记录
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="ghost" size="lg">
                 了解更多
               </Button>
             </div>
@@ -182,9 +176,9 @@ export default function Home() {
               立即注册
             </Button>
             <Button 
-              variant="outline" 
+              variant="ghost" 
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-orange-600"
+              className="text-white hover:bg-white/10"
             >
               查看演示
             </Button>
