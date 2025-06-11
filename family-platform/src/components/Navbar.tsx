@@ -31,9 +31,9 @@ export default function Navbar() {
             <Image
               src="/images/logo-hq.png"
               alt="Family Web Platform Logo"
-              width={132}
-              height={30}
-              className="h-8 w-auto object-contain"
+              width={33}
+              height={7.5}
+              className="h-6 w-auto object-contain"
               priority
               unoptimized
             />
