@@ -31,9 +31,9 @@ export default function Footer() {
     <footer className="bg-neutral-900 text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* 主要内容区域 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-col space-y-8">
           {/* 品牌信息 */}
-          <div className="lg:col-span-1">
+          <div>
             <Link href="/" className="flex items-center space-x-3 mb-4">
               <Image
                 src="/images/logo-hq.png"
@@ -50,59 +50,57 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* 导航链接区域 - 横向排列 */}
-          <div className="lg:col-span-3">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-              {/* 平台链接 */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4">平台导航</h3>
-                <ul className="flex flex-wrap gap-3">
-                  {footerLinks.platform.map((link) => (
-                    <li key={link.href}>
-                      <Link 
-                        href={link.href}
-                        className="text-neutral-400 hover:text-white transition-colors text-sm"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {/* 导航链接区域 - 一级标题水平并列，二级标题垂直排列 */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {/* 平台导航 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">平台导航</h3>
+              <ul className="space-y-2">
+                {footerLinks.platform.map((link) => (
+                  <li key={link.href}>
+                    <Link 
+                      href={link.href}
+                      className="text-neutral-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              {/* 功能模块 */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4">功能模块</h3>
-                <ul className="flex flex-wrap gap-3">
-                  {footerLinks.features.map((link) => (
-                    <li key={link.href}>
-                      <Link 
-                        href={link.href}
-                        className="text-neutral-400 hover:text-white transition-colors text-sm"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* 功能模块 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">功能模块</h3>
+              <ul className="space-y-2">
+                {footerLinks.features.map((link) => (
+                  <li key={link.href}>
+                    <Link 
+                      href={link.href}
+                      className="text-neutral-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              {/* 支持与帮助 */}
-              <div>
-                <h3 className="text-lg font-semibold mb-4">支持与帮助</h3>
-                <ul className="flex flex-wrap gap-3">
-                  {footerLinks.support.map((link) => (
-                    <li key={link.href}>
-                      <Link 
-                        href={link.href}
-                        className="text-neutral-400 hover:text-white transition-colors text-sm"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* 支持与帮助 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">支持与帮助</h3>
+              <ul className="space-y-2">
+                {footerLinks.support.map((link) => (
+                  <li key={link.href}>
+                    <Link 
+                      href={link.href}
+                      className="text-neutral-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
