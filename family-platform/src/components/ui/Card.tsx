@@ -50,7 +50,7 @@ interface CardHeaderProps {
 
 export function CardHeader({ children, className }: CardHeaderProps) {
   return (
-    <div className={clsx('px-6 py-4 border-b border-neutral-100', className)}>
+    <div className={clsx('px-6 py-4', className)}>
       {children}
     </div>
   )
@@ -76,7 +76,7 @@ interface CardFooterProps {
 
 export function CardFooter({ children, className }: CardFooterProps) {
   return (
-    <div className={clsx('px-6 py-4 border-t border-neutral-100', className)}>
+    <div className={clsx('px-6 py-4', className)}>
       {children}
     </div>
   )

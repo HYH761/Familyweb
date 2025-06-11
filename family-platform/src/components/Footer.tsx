@@ -38,9 +38,9 @@ export default function Footer() {
               <Image
                 src="/images/logo-hq.png"
                 alt="Family Web Platform Logo"
-                width={120}
-                height={30}
-                className="h-8 w-auto object-contain"
+                width={88}
+                height={20}
+                className="h-5 w-auto object-contain"
                 unoptimized
               />
               <span className="text-xl font-bold">Family Web</span>
@@ -56,7 +56,7 @@ export default function Footer() {
               {/* 平台链接 */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">平台导航</h3>
-                <ul className="space-y-2">
+                <ul className="flex flex-wrap gap-3">
                   {footerLinks.platform.map((link) => (
                     <li key={link.href}>
                       <Link 
@@ -73,7 +73,7 @@ export default function Footer() {
               {/* 功能模块 */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">功能模块</h3>
-                <ul className="space-y-2">
+                <ul className="flex flex-wrap gap-3">
                   {footerLinks.features.map((link) => (
                     <li key={link.href}>
                       <Link 
@@ -90,7 +90,7 @@ export default function Footer() {
               {/* 支持与帮助 */}
               <div>
                 <h3 className="text-lg font-semibold mb-4">支持与帮助</h3>
-                <ul className="space-y-2">
+                <ul className="flex flex-wrap gap-3">
                   {footerLinks.support.map((link) => (
                     <li key={link.href}>
                       <Link 
@@ -107,8 +107,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 分隔线 */}
-        <div className="border-t border-neutral-800 mt-12 pt-8">
+        {/* 版权信息区域 */}
+        <div className="mt-12 pt-4">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             {/* 版权信息 */}
             <div className="flex items-center space-x-1 text-sm text-neutral-400">

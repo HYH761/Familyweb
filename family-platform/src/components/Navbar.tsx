@@ -23,7 +23,7 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="bg-white shadow-lg border-b border-neutral-200">
+    <nav className="bg-white shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -31,9 +31,9 @@ export default function Navbar() {
             <Image
               src="/images/logo-hq.png"
               alt="Family Web Platform Logo"
-              width={176}
-              height={40}
-              className="h-10 w-auto object-contain"
+              width={88}
+              height={20}
+              className="h-5 w-auto object-contain"
               priority
               unoptimized
             />
@@ -88,7 +88,7 @@ export default function Navbar() {
 
         {/* 移动端菜单 */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-neutral-200 bg-white">
+          <div className="lg:hidden bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigationItems.map((item) => (
                 <Link
@@ -101,8 +101,6 @@ export default function Navbar() {
                   <span>{item.label}</span>
                 </Link>
               ))}
-              
-              <hr className="my-3 border-neutral-200" />
               
               <Link
                 href="/login"
