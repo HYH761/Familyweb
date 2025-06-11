@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
+import Image from 'next/image'
 import { 
   MapPinIcon, 
   CameraIcon, 
@@ -65,10 +66,17 @@ export default function Home() {
       <section className="relative px-4 pt-16 pb-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl">
-              欢迎来到
-              <span className="block text-orange-500 mt-2">Family Web</span>
-            </h1>
+            <div className="flex flex-col items-center justify-center">
+              <Image
+                src="/images/logo-hq.png"
+                alt="Family Web Logo"
+                width={500}
+                height={100}
+                className="w-auto h-auto max-w-full mb-4"
+                priority
+                unoptimized
+              />
+            </div>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-neutral-600">
               记录家庭美好时光，分享生活点滴智慧。让每个家庭成员都能参与其中，共同创造温馨的数字家园。
             </p>
