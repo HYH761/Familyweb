@@ -34,17 +34,9 @@ export default function Footer() {
         <div className="flex flex-col space-y-8">
           {/* 品牌信息 */}
           <div>
-            <Link href="/" className="flex items-center space-x-3 mb-4">
-              <Image
-                src="/images/logo-hq.png"
-                alt="Family Web Platform Logo"
-                width={88}
-                height={20}
-                className="h-5 w-auto object-contain"
-                unoptimized
-              />
+            <div className="mb-4">
               <span className="text-xl font-bold">Family Web</span>
-            </Link>
+            </div>
             <p className="text-neutral-400 text-sm leading-relaxed mb-6">
               为现代家庭打造的数字化互动平台，让每个家庭都能享受科技带来的便利与温暖。
             </p>

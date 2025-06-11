@@ -24,16 +24,16 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white shadow-lg">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+          <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity ml-[15px]">
             <Image
               src="/images/logo-hq.png"
               alt="Family Web Platform Logo"
-              width={88}
-              height={20}
-              className="h-5 w-auto object-contain"
+              width={132}
+              height={30}
+              className="h-8 w-auto object-contain"
               priority
               unoptimized
             />
@@ -57,7 +57,7 @@ export default function Navbar() {
           </div>
 
           {/* 桌面端用户操作 */}
-          <div className="hidden lg:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center space-x-3 mr-[15px]">
             <Link 
               href="/login" 
               className="px-4 py-2 text-neutral-600 hover:text-orange-500 transition-colors font-medium"
@@ -75,7 +75,7 @@ export default function Navbar() {
           {/* 移动端菜单按钮 */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-2 rounded-lg text-neutral-600 hover:text-orange-500 hover:bg-neutral-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-neutral-600 hover:text-orange-500 hover:bg-neutral-100 transition-colors mr-[15px]"
             aria-label="打开菜单"
           >
             {isMenuOpen ? (
