@@ -13,19 +13,19 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#E9E9E9' }}>
-      {/* 主容器 - 800x500，完全按照HTML设计 */}
+    <div className="min-h-screen bg-white flex items-center justify-center">
+      {/* 核心登录容器 - 650x350，左右布局不重叠 */}
       <div 
-        className="relative bg-white"
+        className="bg-white flex"
         style={{
           width: '650px',
           height: '350px',
           boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)'
         }}
       >
-        {/* 左侧 - 家庭照片区域 (380px) */}
+        {/* 左侧 - 家庭照片区域 380px */}
         <div 
-          className="absolute left-0 top-0 overflow-hidden"
+          className="relative overflow-hidden"
           style={{ width: '380px', height: '350px' }}
         >
           <Image
@@ -38,28 +38,20 @@ export default function Home() {
           />
           {/* 照片覆盖文字 */}
           <div 
-            className="absolute text-white font-medium"
-            style={{
-              left: '25px',
-              top: '320px',
-              fontSize: '16px',
-              fontFamily: 'Microsoft YaHei, sans-serif'
-            }}
+            className="absolute bottom-8 left-6 text-white font-medium"
+            style={{ fontSize: '16px' }}
           >
             「时光数字Dock」
           </div>
         </div>
 
-        {/* 右侧 - 登录表单区域 (270px) */}
+        {/* 右侧 - 登录表单区域 270px */}
         <div 
-          className="absolute right-0 top-0"
+          className="bg-white flex flex-col justify-center px-8"
           style={{ width: '270px', height: '350px' }}
         >
           {/* Logo */}
-          <div 
-            className="absolute"
-            style={{ left: '35px', top: '70px' }}
-          >
+          <div className="mb-8">
             <Image
               src="/V0.1.1.webp"
               alt="Family Web Logo"
@@ -70,18 +62,15 @@ export default function Home() {
           </div>
 
           {/* 登录表单 */}
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleLogin} className="space-y-4">
             {/* 用户名输入框 */}
             <input
               type="text"
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="absolute border"
+              className="w-full border"
               style={{
-                left: '35px',
-                top: '140px',
-                width: '200px',
                 height: '35px',
                 backgroundColor: '#F7F7F7',
                 borderColor: '#E0E0E0',
@@ -94,15 +83,14 @@ export default function Home() {
             />
 
             {/* 密码输入框 */}
-            <div className="absolute" style={{ left: '35px', top: '190px' }}>
+            <div className="relative">
               <input
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="border"
+                className="w-full border"
                 style={{
-                  width: '200px',
                   height: '35px',
                   backgroundColor: '#F7F7F7',
                   borderColor: '#E0E0E0',
@@ -115,8 +103,7 @@ export default function Home() {
               />
               {/* 密码可见性图标 */}
               <div 
-                className="absolute text-gray-400 cursor-pointer"
-                style={{ right: '10px', top: '50%', transform: 'translateY(-50%)' }}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer text-sm"
               >
                 👁️
               </div>
@@ -125,11 +112,8 @@ export default function Home() {
             {/* 登录按钮 */}
             <button
               type="submit"
-              className="absolute text-white font-bold"
+              className="w-full text-white font-bold mt-6"
               style={{
-                left: '35px',
-                top: '255px',
-                width: '200px',
                 height: '40px',
                 backgroundColor: '#000000',
                 border: 'none',
