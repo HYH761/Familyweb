@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Web Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #E9E9E9; /* 匹配JSON中的背景色 */
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="loginCanvas"></canvas>
+
+    <script>
+        // 步骤 2 中已确认的 JSON "蓝图"
+        const designJson = {
+          "canvas": {
+            "width": 800,
+            "height": 500,
+            "backgroundColor": "#E9E9E9"
+          },
+          "elements": [
+            {
+              "type": "container",
+              "id": "main_window",
+              "x": 100,
+              "y": 75,
+              "width": 650,
+              "height": 350,
+              "backgroundColor": "#FFFFFF",
+              "shadow": {
+                "color": "rgba(0, 0, 0, 0.1)",
+                "blur": 10,
+                "offsetX": 0,
+                "offsetY": 4
+              },
+              "children": [
+                {
+                  "type": "image",
+                  "id": "family_photo",
+                  "x": 0,
+                  "y": 0,
+                  "width": 380,
+                  "height": 350,
+                  // 使用本地的家庭照片
+                  "src": "../Logo/KFK_8067.JPG",
+                  "alt": "家庭照片"
+                },
+                {
+                  "type": "text",
+                  "id": "image_overlay_text",
+                  "x": 25,
+                  "y": 320,
+                  "text": "「时光数字Dock」",
+                  "font": "16px 'Microsoft YaHei', sans-serif",
+                  "color": "#FFFFFF"
+                },
+                {
+                  "type": "container",
+                  "id": "login_form",
+                  "x": 380,
+                  "y": 0,
+                  "width": 270,
+                  "height": 350,
+                  "children": [
+                     {
+                        "type": "logo_image",
+                        "id": "logo",
+                        "x": 35,
+                        "y": 70,
+                        "width": 200,
+                        "height": 30,
+                        "src": "../Logo/V0.1.1.webp",
+                        "alt": "Family Web Logo"
+                     },
+                     {
+                        "type": "input",
+                        "id": "username_input",
+                        "x": 35,
+                        "y": 140,
+                        "width": 200,
+                        "height": 35,
+                        "placeholder": "Username",
+                        "backgroundColor": "#F7F7F7",
+                        "borderColor": "#E0E0E0",
+                        "font": "14px sans-serif",
+                        "textColor": "#999999",
+                        "padding": 10
+                     },
+                     {
+                       "type": "input",
+                       "id": "password_input",
+                       "x": 35,
+                       "y": 190,
+                       "width": 200,
+                       "height": 35,
+                       "placeholder": "Password",
+                       "backgroundColor": "#F7F7F7",
+                       "borderColor": "#E0E0E0",
+                       "font": "14px sans-serif",
+                       "textColor": "#999999",
+                       "padding": 10,
+                       "hasIcon": true,
+                       "icon": "eye"
+                     },
+                     {
+                       "type": "button",
+                       "id": "login_button",
+                       "x": 35,
+                       "y": 255,
+                       "width": 200,
+                       "height": 40,
+                       "text": "LOGIN",
+                       "backgroundColor": "#000000",
+                       "textColor": "#FFFFFF",
+                       "font": "bold 14px sans-serif",
+                       "borderRadius": 4
+                     }
+                  ]
+                }
+              ]
+            }
+          ]
+        };
+
+        window.onload = function() {
+            const canvas = document.getElementById('loginCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            const design = designJson.canvas;
+            canvas.width = design.width;
+            canvas.height = design.height;
+
+            // 图像预加载器
+            function preloadImages(elements, callback) {
+                let loadedImages = 0;
+                let numImages = 0;
+                const images = {};
+
+                function findImages(elArray) {
+                    elArray.forEach(el => {
+                        if (el.type === 'image' || el.type === 'logo_image') {
+                            numImages++;
+                            images[el.id] = new Image();
+                            images[el.id].onload = () => {
+                                loadedImages++;
+                                if (loadedImages === numImages) {
+                                    callback(images);
+                                }
+                            };
+                            images[el.id].onerror = () => {
+                                console.error(`无法加载图片: ${el.src}`);
+                                loadedImages++; // 即使失败也继续，避免卡住
+                                if (loadedImages === numImages) {
+                                    callback(images);
+                                }
+                            };
+                            images[el.id].src = el.src;
+                        }
+                        if (el.children) {
+                            findImages(el.children);
+                        }
+                    });
+                }
+                
+                findImages(elements);
+                if (numImages === 0) {
+                    callback({});
+                }
+            }
+            
+            // 主渲染函数
+            function render(loadedImages) {
+                // 绘制主画布背景
+                ctx.fillStyle = design.backgroundColor;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // 开始绘制所有元素
+                drawElements(ctx, designJson.elements, 0, 0, loadedImages);
+            }
+
+            // 递归绘制函数
+            function drawElements(ctx, elements, parentX, parentY, images) {
+                elements.forEach(el => {
+                    const currentX = parentX + el.x;
+                    const currentY = parentY + el.y;
+
+                    // 设置阴影
+                    if (el.shadow) {
+                        ctx.shadowColor = el.shadow.color;
+                        ctx.shadowBlur = el.shadow.blur;
+                        ctx.shadowOffsetX = el.shadow.offsetX;
+                        ctx.shadowOffsetY = el.shadow.offsetY;
+                    }
+
+                    // 根据类型选择绘制方法
+                    switch(el.type) {
+                        case 'container':
+                            ctx.fillStyle = el.backgroundColor;
+                            ctx.fillRect(currentX, currentY, el.width, el.height);
+                            break;
+                        case 'image':
+                        case 'logo_image':
+                            if (images[el.id] && images[el.id].complete) {
+                                ctx.drawImage(images[el.id], currentX, currentY, el.width, el.height);
+                            }
+                            break;
+                        case 'text':
+                            ctx.font = el.font;
+                            ctx.fillStyle = el.color;
+                            ctx.textAlign = 'left';
+                            ctx.textBaseline = 'top';
+                            ctx.fillText(el.text, currentX, currentY);
+                            break;
+                        case 'logo':
+                            ctx.font = el.iconFont;
+                            ctx.fillStyle = el.color;
+                            ctx.fillText(el.iconText, currentX, currentY);
+                            const iconWidth = ctx.measureText(el.iconText).width;
+                            ctx.font = el.textFont;
+                            ctx.fillText(el.mainText, currentX + iconWidth + 5, currentY);
+                            break;
+                        case 'input':
+                            // 绘制背景和边框
+                            ctx.fillStyle = el.backgroundColor;
+                            ctx.strokeStyle = el.borderColor;
+                            ctx.lineWidth = 1;
+                            ctx.fillRect(currentX, currentY, el.width, el.height);
+                            ctx.strokeRect(currentX, currentY, el.width, el.height);
+                            // 绘制占位文字
+                            ctx.font = el.font;
+                            ctx.fillStyle = el.textColor;
+                            ctx.fillText(el.placeholder, currentX + el.padding, currentY + (el.height - 14) / 2);
+                            // 绘制图标
+                            if(el.hasIcon && el.icon === 'eye'){
+                                drawEyeIcon(ctx, currentX + el.width - 25, currentY + el.height / 2);
+                            }
+                            break;
+                        case 'button':
+                            ctx.fillStyle = el.backgroundColor;
+                            ctx.beginPath();
+                            ctx.roundRect(currentX, currentY, el.width, el.height, [el.borderRadius]);
+                            ctx.fill();
+                            // 绘制按钮文字
+                            ctx.font = el.font;
+                            ctx.fillStyle = el.textColor;
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'middle';
+                            ctx.fillText(el.text, currentX + el.width / 2, currentY + el.height / 2);
+                            break;
+                    }
+                    
+                    // 绘制子元素前清除阴影，避免继承
+                    ctx.shadowColor = 'transparent';
+
+                    if (el.children) {
+                        drawElements(ctx, el.children, currentX, currentY, images);
+                    }
+                });
+            }
+
+            function drawEyeIcon(ctx, x, y){
+                ctx.strokeStyle = '#999999';
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.arc(x, y, 5, Math.PI * 0.25, Math.PI * 1.75, false);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(x, y, 2, 0, Math.PI * 2, true);
+                ctx.fillStyle = '#999999';
+                ctx.fill();
+            }
+
+            // 启动渲染流程
+            preloadImages(designJson.elements, render);
+        };
+    </script>
+</body>
+</html>
