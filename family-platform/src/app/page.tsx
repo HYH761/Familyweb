@@ -134,20 +134,20 @@ export default function Home() {
             </p>
             
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Button 
-                size="xl" 
-                leftIcon={<UsersIcon className="h-6 w-6" />}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-4 text-lg"
-              >
-                开始体验
-              </Button>
-              <Button 
-                variant="outline" 
-                size="xl"
-                className="border-2 border-gray-300 hover:border-gray-400 px-8 py-4 text-lg"
-              >
-                观看演示
-              </Button>
+                             <Button 
+                 size="lg" 
+                 leftIcon={<UsersIcon className="h-6 w-6" />}
+                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-4 text-lg"
+               >
+                 开始体验
+               </Button>
+               <Button 
+                 variant="outline" 
+                 size="lg"
+                 className="border-2 border-gray-300 hover:border-gray-400 px-8 py-4 text-lg"
+               >
+                 观看演示
+               </Button>
             </div>
           </div>
         </div>
@@ -250,20 +250,20 @@ export default function Home() {
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
             加入我们，与家人一起创造和分享美好回忆，让爱与温暖永远传递
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button 
-              size="xl"
-              className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
-            >
-              立即开始
-            </Button>
-            <Button 
-              variant="outline" 
-              size="xl"
-              className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg"
-            >
-              了解更多
-            </Button>
+                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
+             <Button 
+               size="lg"
+               className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
+             >
+               立即开始
+             </Button>
+             <Button 
+               variant="outline" 
+               size="lg"
+               className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg"
+             >
+               了解更多
+             </Button>
           </div>
         </div>
       </section>
