@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react'
 import ConfigurableLoginPage from '@/components/ConfigurableLoginPage'
-import initialConfig from '@/config/login-page-config.json'
+// import initialConfig from '@/config/login-page-config.json'
+const initialConfig = {};
 
 export default function ConfigEditorPage() {
   const [config, setConfig] = useState(JSON.stringify(initialConfig, null, 2))
