@@ -4,15 +4,30 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { Eye, EyeOff } from 'lucide-react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { createClient } from '@/lib/supabase'
 
 export default function Page() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const router = useRouter()
+  const supabase = createClient()
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Login info:', { username, password })
+    setError(null)
+    // 这里假设 username 就是 email
+    const { error } = await supabase.auth.signInWithPassword({
+      email: username,
+      password,
+    })
+    if (error) {
+      setError(error.message)
+    } else {
+      router.push('/')
+    }
   }
 
   // Styles for pixel-perfect control
@@ -159,6 +174,7 @@ export default function Page() {
                 {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
             </div>
+            {error && <p style={{ color: 'red', fontSize: '12px', marginTop: '8px', textAlign: 'center' }}>{error}</p>}
             <button
               type="submit"
               style={buttonStyle}

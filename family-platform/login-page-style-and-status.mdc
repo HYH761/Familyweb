@@ -1,0 +1,45 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Login Page Style & Current Status (2024-06-11)
+
+## 1. ?????
+- ???????? `/login`??? `/` ??????????
+- ???? `/register`??????????
+# Login Page Style & Current Status (2024-06-11)
+
+## 1. 路径与结构
+- 登录页唯一入口为 `/login`，首页 `/` 仅为占位，后续开发。
+- 注册页为 `/register`，与登录页风格一致。
+
+## 2. 样式规范
+- 登录页整体为左右分栏布局，左侧为家庭照片，右侧为表单。
+- 右侧表单宽度 216px，所有输入框、按钮、Logo 宽度均为 216px，像素级对齐。
+- 按钮为黑灰色线性渐变（`linear-gradient(90deg, #111827 0%, #374151 100%)`），白色字体。
+- 输入框、按钮均为圆角矩形，`border-radius: 6px`。
+- 输入框 `box-sizing: border-box`，宽度与 Logo、按钮完全一致。
+- 登录表单下方有"Sign up"链接，黑色字体，无下划线。
+- 所有文案均为英文。
+- 登录页顶部有窗口装饰按钮，右上角。
+- 左下角有"\"Time Dock\""字样，白色字体，带阴影。
+
+## 3. 功能现状
+- 登录页仅包含 Username、Password 输入框和 LOGIN 按钮。
+- 密码输入框右侧有显示/隐藏密码按钮（眼睛图标）。
+- 登录表单下方有"Sign up"链接，跳转到注册页。
+- 注册页包含 Email、Password、Confirm Password，按钮为 Register。
+- 注册成功后提示"Registration successful! Please check your email to verify your account."
+- 所有错误提示、按钮、占位符等均为英文。
+
+## 4. 技术实现
+- 使用 Next.js 14+，React 18+，TypeScript。
+- Supabase 作为后端认证服务，环境变量已配置于 `.env.local`。
+- 所有样式均为内联 CSS（React style 对象），无外部 CSS 框架。
+- 代码已推送至 GitHub，Vercel 自动部署。
+
+## 5. 约定与后续
+- 登录页、注册页样式和交互已锁定，后续如需调整需在本文件中记录。
+- 首页 `/` 仅为占位，后续开发时再补充。
+- 代码结构、样式规范、功能现状等均以本文件为准。
